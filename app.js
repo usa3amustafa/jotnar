@@ -83,6 +83,7 @@ const preloaderFunc = function () {
     headerSubTitle.classList.add('headerSubTitleSlideUp')
     headerSignupForm.classList.add('headerSignupFormSlideUp')
     headerBarImg.classList.add('headerBarImgSlideUp')
+
     // add classes to the elements here
   }, 5000)
 }
