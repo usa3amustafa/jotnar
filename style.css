@@ -1,0 +1,548 @@
+/* rest */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* utilities */
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 95%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+body {
+  min-height: 100vh;
+  background: url('./assets/Jotnar_BG_Texture.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  font-family: 'Azo Sans';
+
+  cursor: url('./assets/Jotnar_Nav_Icon.png');
+}
+
+a {
+  color: #fefefe;
+  text-decoration: none;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colSpanFull {
+  grid-column: 1/-1;
+}
+
+.read-more {
+  font-weight: 500;
+  cursor: pointer;
+  display: none;
+  color: #1899d7;
+  font-weight: 600;
+}
+
+/* read more */
+.read-more-text {
+  line-height: 1.6;
+  display: none;
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+}
+.read-more {
+  display: inline-block;
+}
+.read-more-text {
+  display: none;
+  overflow: hidden;
+}
+.show-read-more {
+  display: inline;
+  height: auto;
+}
+
+/* slide in */
+.slide-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out;
+}
+
+.slide-in.appear {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* pre loader */
+#preloader {
+  background: #000;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#preloader-home {
+  background: #000;
+  height: 100vh;
+  width: 100%;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.preloader-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.preloader-video > img {
+  min-width: 100%;
+  min-height: 100%;
+
+  width: auto;
+  height: auto;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* navbar */
+.nav {
+  padding: 1rem 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLogoImg {
+  max-width: 5rem;
+  margin-right: 1rem;
+
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+}
+
+.navLogoImgSlideUp {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+
+  transition-delay: 0.1s;
+}
+
+.navLinksSlideUp {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.navSocialLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+
+  transition-delay: 0.2s;
+}
+
+.navSocialLinksSlideUp {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.navLink {
+  text-transform: uppercase;
+}
+
+.navSocialLinkImg {
+  max-width: 1.5rem;
+}
+
+/* header */
+.header {
+  padding-top: 2rem;
+  min-height: 80vh;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headerLogoImg {
+  max-width: 15rem;
+  margin-bottom: 2rem;
+
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+
+  transition-delay: 0.3s;
+}
+
+.headerLogoImgSlideUp {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.headerTitle {
+  font-size: 4rem;
+  text-align: center;
+  color: #fefefe;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  letter-spacing: -3px;
+
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+
+  transition-delay: 0.4s;
+}
+
+.headerTitleSlideUp {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.blueText {
+  color: #1899d7;
+  display: inline-block;
+
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+
+  transition-delay: 0.5s;
+}
+
+.blueTextSlideUp {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.headerSubTitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-align: center;
+  color: #fefefe;
+  letter-spacing: -0.5px;
+  margin-bottom: 2rem;
+
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+
+  transition-delay: 0.6s;
+}
+
+.headerSubTitleSlideUp {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.headerSignupForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  width: 700px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+
+  transition-delay: 0.7s;
+}
+
+.headerSignupFormSlideUp {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.inputField {
+  width: 100%;
+  padding: 1rem 0.75rem;
+  border: 2px solid #1899d7;
+  outline: none;
+  background-color: transparent;
+  font-family: 'Azo Sans';
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fefefe;
+  border-radius: 0;
+}
+
+.inputField:focus-within {
+  outline: none;
+}
+
+.submitButton {
+  padding: 0.75rem 2rem;
+  font-family: 'Azo Sans';
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0;
+  outline: none;
+  background: #1899d7;
+  border: 2px solid #1899d7;
+
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out,
+    border 0.25s ease-in-out;
+}
+
+.submitButton:focus-visible {
+  outline: none;
+}
+
+.submitButton:hover {
+  background-color: #07162b;
+  color: #1899d7;
+  cursor: pointer;
+}
+
+.headerBarImg {
+  position: absolute;
+  bottom: 0;
+
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+
+  transition-delay: 0.8s;
+}
+
+.headerBarImgSlideUp {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* about section */
+.aboutSection {
+  padding-top: 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 500;
+  font-family: 'Azo Sans';
+  color: #1899d7;
+  margin-bottom: 1rem;
+}
+
+.sectionDesc {
+  font-family: 'Azo Sans';
+  color: #fefefe;
+  line-height: 1.6;
+}
+
+.sectionDesc + .sectionDesc {
+  margin-top: 1.5rem;
+}
+
+/* jotnar ice image */
+.jotnarIceImg {
+  padding-bottom: 2rem;
+  min-height: 580px;
+  background: url('./assets/Jotnar_Ice_icon.png');
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+
+  /* position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  transform: translateX(-50%); */
+}
+
+.jotnarMediaLogo {
+  max-width: 40rem;
+  margin-top: 4rem;
+  transform: translateZ(100px);
+}
+
+/* responsiveness */
+@media (max-width: 880px) {
+  .headerTitle {
+    font-size: 3rem;
+  }
+
+  .headerSignupForm {
+    max-width: 500px;
+  }
+
+  .inputField {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .jotnarMediaLogo {
+    max-width: 20rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    padding: 0.5rem 0;
+  }
+
+  .navLogo {
+    max-width: 5rem;
+    margin-right: 0.5rem;
+  }
+
+  .navLinks {
+    gap: 1rem;
+  }
+
+  .navLink {
+    font-size: 0.875rem;
+  }
+
+  .navSocialLinks {
+    gap: 0.5rem;
+  }
+
+  .navSocialLinkImg {
+    max-width: 1rem;
+  }
+
+  .headerTitle {
+    font-size: 2.5rem;
+    letter-spacing: -2px;
+  }
+
+  .headerSubTitle {
+    font-size: 1rem;
+  }
+
+  .headerSignupForm {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    width: 90%;
+  }
+
+  .inputField {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .aboutSection {
+    text-align: center;
+  }
+
+  .jotnarMediaLogo {
+    max-width: 15rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .navLogo {
+    max-width: 3rem;
+    margin-right: 0;
+  }
+
+  .navLinks {
+    gap: 0.75rem;
+  }
+
+  .navLink {
+    font-size: 0.875rem;
+  }
+
+  .headerTitle {
+    font-size: 2rem;
+    letter-spacing: -1px;
+  }
+
+  .headerSubTitle {
+    font-size: 0.9rem;
+    letter-spacing: 0;
+  }
+}
