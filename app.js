@@ -13,12 +13,9 @@ requestAnimationFrame(raf)
 // tilt
 
 VanillaTilt.init(document.querySelector('.jotnarIceImg'), {
-  max: 25,
-  speed: 400,
+  max: 5,
+  speed: 50,
 })
-
-//It also supports NodeList
-VanillaTilt.init(document.querySelectorAll('.your-element'))
 
 // read more
 const readMoreBtn = document.querySelector('.read-more')
