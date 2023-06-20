@@ -89,6 +89,7 @@ const preloaderFunc = function () {
 
 window.addEventListener('load', function () {
   if (sessionStorage.getItem('dontload') === null) {
+    sessionStorage.setItem('dontload', true)
     preloaderFunc()
     sessionStorage.setItem('dontload', true)
   }
