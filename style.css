@@ -410,6 +410,7 @@ a {
   font-family: 'Azo Sans';
   color: #fefefe;
   line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 .sectionDesc + .sectionDesc {
@@ -418,11 +419,10 @@ a {
 
 /* jotnar ice image */
 .jotnarIceImg {
-  padding-bottom: 2rem;
-  min-height: 580px;
+  min-height: 80vh;
   background: url('./assets/Jotnar_Ice_icon.png');
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat;
 
   display: flex;
@@ -462,6 +462,10 @@ a {
 
   .jotnarMediaLogo {
     max-width: 20rem;
+  }
+
+  .jotnarIceImg {
+    min-height: 60vh;
   }
 }
 
@@ -517,6 +521,10 @@ a {
 
   .jotnarMediaLogo {
     max-width: 15rem;
+  }
+
+  .jotnarIceImg {
+    min-height: 40vh;
   }
 }
 

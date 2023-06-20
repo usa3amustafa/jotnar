@@ -93,9 +93,18 @@ window.addEventListener('load', function () {
     sessionStorage.setItem('dontload', true)
     preloaderFunc()
     sessionStorage.setItem('dontload', true)
+  } else {
+    preLoader.style.display = 'none'
+    navLogo.classList.add('navLogoImgSlideUp')
+    navLinks.classList.add('navLinksSlideUp')
+    navSocialLinks.classList.add('navSocialLinksSlideUp')
+    headerLogoImg.classList.add('headerLogoImgSlideUp')
+    headerTitle.classList.add('headerTitleSlideUp')
+    blueText.classList.add('blueTextSlideUp')
+    headerSubTitle.classList.add('headerSubTitleSlideUp')
+    headerSignupForm.classList.add('headerSignupFormSlideUp')
+    headerBarImg.classList.add('headerBarImgSlideUp')
   }
-
-  preloaderFunc()
 })
 
 window.onbeforeunload = function () {
